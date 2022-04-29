@@ -13,6 +13,7 @@ function App() {
   const REDIRECT_URI=process.env.REACT_APP_REDIRECT_URI
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
   const RESPONSE_TYPE = "token"
+  console.log(CLIENT_ID)
 
   const [token, setToken]=useState("")
   const [search, setSearch]=useState("")
@@ -69,6 +70,15 @@ return (
       
       :<div className="text-right"><button className="btn btn-success" type="button" onClick={logout}>Logout</button></div>}
     </header>
+    {token?
+      <>
+      <form className="d-flex flex-row bd-highlight mb-3 mt-5 text-muted" onSubmit={searchArtists}>
+
+        <input  className="form-control mx-10" style={{ width: "300px" }} placeholder="search" value={search} onChange={e=>setSearch(e.target.value)} />
+        <button class="btn btn-success" type={"submit"} >Search</button>
+      </form>
+      </>
+      :<h4 className="p-3 text-white text-center bg-black">Please login!</h4>}
   </div>
 )}
 
