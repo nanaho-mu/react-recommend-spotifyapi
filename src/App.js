@@ -1,7 +1,12 @@
 import './App.css';
 import {useEffect, useState} from "react";
 import axios from "axios";
+import SpotifyWebApi from "spotify-web-api-node"
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+const spotifyApi = new SpotifyWebApi({
+  clientId: "ef95ae2b24034ef6b63c47e5317c0345",
+})
 
 function App() {
   const CLIENT_ID=process.env.REACT_APP_CLIENT_ID
@@ -24,6 +29,11 @@ function App() {
     }
     setToken(token)
   },[])
+
+  useEffect(() => {
+    if (!token) return
+    spotifyApi.setAccessToken(token)
+  }, [token])
 
 return (
   <>
