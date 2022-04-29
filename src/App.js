@@ -15,6 +15,9 @@ function App() {
   const RESPONSE_TYPE = "token"
 
   const [token, setToken]=useState("")
+  const [search, setSearch]=useState("")
+  const [artists, setArtists]=useState("")
+
 
   useEffect(()=>{
     const hash=window.location.hash
@@ -39,6 +42,23 @@ function App() {
     setToken("")
     window.localStorage.removeItem("token")
   }
+
+  const searchArtists=async (e)=>{
+    e.preventDefault()
+    const {data}=await axios.get("https://api.spotify.com/v1/search", {
+      headers: {
+        Authorization: `Bearer ${token}`
+    },
+    params: {
+        q: search,
+        type:"artist"
+    }
+    })
+ 
+    setArtists(data.artists.items[0].id)
+
+  }
+  console.log(artists)
 
 return (
   <div className="App bg-black" style={{ width: "100vw", height:"100vh"  }}>
