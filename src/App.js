@@ -41,9 +41,15 @@ function App() {
   }
 
 return (
-  <>
-  <h1>hello</h1>
-  </>
+  <div className="App bg-black" style={{ width: "100vw", height:"100vh"  }}>
+    <header className="App-header m-10 bg-black">
+      <h1 className="pt-3 text-center text-success">Spotify React</h1>
+      {!token?
+      <div className="text-center m-5"><a className="btn btn-success p-3 text-white" role="button" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a></div>
+      
+      :<div className="text-right"><button className="btn btn-success" type="button" onClick={logout}>Logout</button></div>}
+    </header>
+  </div>
 )}
 
 export default App;
