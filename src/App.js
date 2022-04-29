@@ -35,6 +35,11 @@ function App() {
     spotifyApi.setAccessToken(token)
   }, [token])
 
+  const logout = () => {
+    setToken("")
+    window.localStorage.removeItem("token")
+  }
+
 return (
   <>
   <h1>hello</h1>
