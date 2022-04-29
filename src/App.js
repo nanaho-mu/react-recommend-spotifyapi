@@ -1,7 +1,7 @@
-import './App.css';
 import {useEffect, useState} from "react";
 import axios from "axios";
 import SpotifyWebApi from "spotify-web-api-node"
+import { RecommendSongs } from './RecommendSongs';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const spotifyApi = new SpotifyWebApi({
@@ -18,6 +18,29 @@ function App() {
   const [token, setToken]=useState("")
   const [search, setSearch]=useState("")
   const [artists, setArtists]=useState("")
+  const [recommendHappyTrack, setRecommendHappyTrack]=useState([])
+  const [recommendDarkTrack, setRecommendDarkTrack]=useState([])
+
+  const paramsHappy={
+    seed_artists : artists,
+    limit: 5,
+    min_valence: 0.8,
+    max_valence: 1.0,
+    min_danceability: 0.6,
+    min_energy: 0.7,
+    max_energy: 1.0,
+    target_mode: 1,
+  }
+  const paramsSad={
+    seed_artists : artists,
+    max_valence: 0.2,
+    min_valence:0.0,
+    limit:5,
+    min_danceability: 0.0,
+    min_energy: 0.0,
+    max_energy: 0.5,
+    target_mode: 0,
+  }
 
 
   useEffect(()=>{
@@ -77,6 +100,17 @@ return (
         <input  className="form-control mx-10" style={{ width: "300px" }} placeholder="search" value={search} onChange={e=>setSearch(e.target.value)} />
         <button class="btn btn-success" type={"submit"} >Search</button>
       </form>
+      <div className="d-flex flex-column bg-black" style={{ width:"100vw",height: "100vh" }}>
+        <div className="bg-black">
+        <div className="container">
+        <div className="row d-flex flex-row bd-black mt-5 text-muted flex-grow-1" style={{ overflowY: "auto", width:"100vw",height: "100vh" }}>
+          <RecommendSongs  token={token} artists={artists} setRecommendTrack={setRecommendHappyTrack} recommendTrack={recommendHappyTrack} params={paramsHappy} type={"Happy"}/>
+          <RecommendSongs token={token} artists={artists} setRecommendTrack={setRecommendDarkTrack}
+          recommendTrack={recommendDarkTrack} params={paramsSad} type={"Sad"}/>
+        </div>
+        </div>
+      </div>
+      </div>
       </>
       :<h4 className="p-3 text-white text-center bg-black">Please login!</h4>}
   </div>
