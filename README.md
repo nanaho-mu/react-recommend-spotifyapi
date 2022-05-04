@@ -9,9 +9,9 @@ https://react-recommend-spotifyapi.vercel.app/
 ![RecommendByTune](https://user-images.githubusercontent.com/72216137/166636649-4ef0c8ee-1041-42e6-858d-dc5725daff8b.gif)
 
 # 使用技術
--Javascript
--React
--Spotify Api
+- Javascript
+- React
+- Spotify Api
 
 # 目指した課題解決
 
