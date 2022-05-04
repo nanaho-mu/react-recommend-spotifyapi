@@ -2,7 +2,8 @@
 https://react-recommend-spotifyapi.vercel.app/
 
 # GIF
-![recommendByTune](https://user-images.githubusercontent.com/72216137/166635351-b701178a-2882-41f7-acaf-c2cb96b3d756.gif)
+![RecommendByTune](https://user-images.githubusercontent.com/72216137/166636649-4ef0c8ee-1041-42e6-858d-dc5725daff8b.gif)
+
 
 # Getting Started with Create React App
 
