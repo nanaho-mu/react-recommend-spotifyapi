@@ -14,13 +14,14 @@ export const RecommendSongs=(props)=>{
       },
       params: {
         seed_artists : artists,
-        limit: 5,
         max_valence: params.max_valence,
         min_valence: params.min_valence,
         min_danceability: params.min_danceability,
         min_energy:params.min_energy,
         max_energy: params.max_energy,
         target_mode: params.target_mode,
+        max_key:params.max_key,
+        min_key:params.min_key,
       },
     })
       .then((reaponse) => {

@@ -28,26 +28,40 @@ function App() {
   const [artists, setArtists]=useState("")
   const [recommendHappyTrack, setRecommendHappyTrack]=useState([])
   const [recommendDarkTrack, setRecommendDarkTrack]=useState([])
+  const [recommendEmoTrack, setRecommendEmoTrack]=useState([])
 
   const paramsHappy={
     seed_artists : artists,
-    limit: 5,
     min_valence: 0.8,
     max_valence: 1.0,
     min_danceability: 0.6,
     min_energy: 0.7,
     max_energy: 1.0,
     target_mode: 1,
+    min_key:1,
+    max_key:10,
   }
   const paramsSad={
     seed_artists : artists,
-    max_valence: 0.2,
+    max_valence: 0.3,
     min_valence:0.0,
-    limit:5,
     min_danceability: 0.0,
     min_energy: 0.0,
-    max_energy: 0.5,
+    max_energy: 0.6,
     target_mode: 0,
+    // min_key:7,
+    // max_key:10,
+  }
+  const paramsEmo={
+    seed_artists : artists,
+    max_valence: 0.8,
+    min_valence:0.5,
+    min_danceability: 0.5,
+    min_energy: 0.3,
+    max_energy: 0.7,
+    // target_mode: 1,
+    max_key:11,
+    min_key:3,
   }
 
 
@@ -95,7 +109,8 @@ function App() {
 return (
   <div className="App bg-black" style={{ width: "100vw", height:"100vh"  }}>
     <header className="App-header m-10 bg-black">
-      <h1 className="pt-3 text-center text-success">Spotify React</h1>
+      <h1 className="pt-3 text-center text-success">Recommend By Tune</h1>
+      <h1 className="pt-3 text-center text-success">With Spotify</h1>
       {!token?
       <div className="text-center m-5"><a className="btn btn-success p-3 text-white" role="button" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${scopes.join(
         "%20"
@@ -117,6 +132,8 @@ return (
           <RecommendSongs  token={token} artists={artists} setRecommendTrack={setRecommendHappyTrack} recommendTrack={recommendHappyTrack} params={paramsHappy} type={"Happy"}/>
           <RecommendSongs token={token} artists={artists} setRecommendTrack={setRecommendDarkTrack}
           recommendTrack={recommendDarkTrack} params={paramsSad} type={"Sad"}/>
+          <RecommendSongs token={token} artists={artists} setRecommendTrack={setRecommendEmoTrack}
+          recommendTrack={recommendEmoTrack} params={paramsEmo} type={"Emo"}/>
         </div>
         </div>
       </div>
