@@ -12,6 +12,7 @@ https://react-recommend-spotifyapi.vercel.app/
 - Javascript
 - React
 - Spotify Api
+- Bootstrap
 
 # 目指した課題解決
 
