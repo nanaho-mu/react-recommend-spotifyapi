@@ -4,9 +4,13 @@ Recommend By Tune With Spotify
 アーティスト検索からそのアーティストに基づいたレコメンドトラックとその楽曲の特徴量をSpotify Apiから取得し、曲調ごとに表示してくれるWebアプリ
 # URL
 https://react-recommend-spotifyapi.vercel.app/
-> note. 
+> note
+> <br>
 > 2021/05/27における、Spotify Apiのプラットフォームの変更により、新しいアプリは「開発モード」になり、ユーザーが25人以下の場合アクセスが制限されます 。そのため、現状ユーザーが本アプリにアクセスするには、開発者がダッシュボードにおいて、ユーザーの名前とメールアドレスを追加する必要があります。
+> <br />
 > (ユーザ数が25人以上になった場合、Spotifyに制限を解除するレビューをリクエストすることができます。)
+> <br />
+> <br />
 > URL:https://developer.spotify.com/community/news/2021/05/27/improving-the-developer-and-user-experience-for-third-party-apps/
 
 # GIF
