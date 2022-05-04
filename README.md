@@ -1,6 +1,9 @@
 # URL
 https://react-recommend-spotifyapi.vercel.app/
 
+# GIF
+![recommendByTune](https://user-images.githubusercontent.com/72216137/166635351-b701178a-2882-41f7-acaf-c2cb96b3d756.gif)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
