@@ -21,5 +21,3 @@ https://react-recommend-spotifyapi.vercel.app/
 - アーティスト検索による、そのアーティストの周辺曲のレコメンド
 - happy, sad, emoの曲調ごとに表示してくれる機能
 - preview musicを聴ける
-
-The build is minified and the filenames include the hashes.\
