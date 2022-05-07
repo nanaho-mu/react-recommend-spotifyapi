@@ -23,7 +23,7 @@ https://react-recommend-spotifyapi.vercel.app/
 - Bootstrap
 
 # 目指した課題解決
-
+既存の音楽配信アプリでは、全ユーザで共通した、曲調ごとのプレイリストしか存在しない。そこで、ユーザ個々人の嗜好を反映した上で、曲調ごとに分類して楽曲を表示する機能を実装した。
 # 機能一覧
 - login機能
 - logout機能
