@@ -14,7 +14,8 @@ https://react-recommend-spotifyapi.vercel.app/
 > URL:https://developer.spotify.com/community/news/2021/05/27/improving-the-developer-and-user-experience-for-third-party-apps/
 
 # GIF
-![RecommendByTune](https://user-images.githubusercontent.com/72216137/166636649-4ef0c8ee-1041-42e6-858d-dc5725daff8b.gif)
+![spotify_javascript_clear](https://user-images.githubusercontent.com/72216137/167285224-bec5977a-2465-44e9-b4e8-ae0ea6c10efd.gif)
+
 
 # 使用技術
 - Javascript
